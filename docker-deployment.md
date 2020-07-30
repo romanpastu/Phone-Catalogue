@@ -1,3 +1,7 @@
+###### ** The react app comes shipped with nginx as a webserver
+
+---
+
 Front: https://hub.docker.com/r/romancc/phone-boot-front <br />
 Back: https://hub.docker.com/r/romancc/phone-boot-back
 
@@ -16,3 +20,5 @@ docker-run -p 1234:1234 -d romancc/phone-boot-back
 ```
 
 The application will now be available in ```localhost:8080```
+
+
