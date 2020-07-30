@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  back:
+    image: romancc/phone-boot-back
+    restart: always
+    ports:
+    - 1234:1234
+
+  front:
+    image: romancc/phone-boot-front
+    restart: always
+    ports:
+    - 8080:80
