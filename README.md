@@ -16,3 +16,8 @@ Your task is to write a very simple product catalogue app.
 ## Bonus points
 1. Dockerize the app.
 2. Write realistic unit/end-to-end tests.
+
+# Results
+
+![GeneralDisplay](https://github.com/romanpastu/Phone-Catalogue/blob/master/repo-images/full-preview.png?raw=true)
+![SpecificDisplay](https://github.com/romanpastu/Phone-Catalogue/blob/master/repo-images/selected-preview.png?raw=true)
