@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
 
-function App() {
+import { connect } from 'react-redux';
+import { CircularProgress } from '@material-ui/core';
+import { loadPhones } from './redux/actions/actions.js';
+import TablePhones from './Table.js';
+
+const mapStateToProps = (state) => state;
+
+function mapDispatchToProps(dispatch) {
+  return {
+    loadPhones: () => {
+      dispatch(loadPhones());
+    },
+  };
+}
+
+export function App(props) {
+  useEffect(() => {
+    props.loadPhones();
+  }, []);
+
+  if (props.phones.data) {
+    console.log(props.phones)
+    return (
+      <div className="App">
+        <div className="introductoryNav">Phones</div>
+        <TablePhones phones={props.phones.data} />
+      </div>
+    );
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="gridLoadingContainer">
+      <CircularProgress color="secondary" iconStyle="width: 1000, height:1000" />
+      <p className="loadingText1">Loading...</p>
     </div>
   );
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);

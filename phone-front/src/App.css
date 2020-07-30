@@ -28,6 +28,29 @@
   color: #61dafb;
 }
 
+.gridLoadingContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.loadingText1 {
+	margin: 0;
+	margin-left: 1vw;
+	padding: 0;
+	color: black;
+}
+.introductoryNav{
+  height:5vh;
+  background-color:green;
+  width:100vw;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  color:white;
+  font-weight: bolder;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
