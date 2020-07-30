@@ -10,7 +10,7 @@ const mapStateToProps = (state) => state;
 
 function mapDispatchToProps(dispatch) {
   return {
-    loadPhones: () => {
+    loadPhones: async () => {
       dispatch(loadPhones());
     },
   };
@@ -22,7 +22,6 @@ export function App(props) {
   }, []);
 
   if (props.phones.data) {
-    console.log(props.phones)
     return (
       <div className="App">
         <div className="introductoryNav">Phones</div>
@@ -32,7 +31,7 @@ export function App(props) {
   }
   return (
     <div className="gridLoadingContainer">
-      <CircularProgress color="secondary" iconStyle="width: 1000, height:1000" />
+      {/* <CircularProgress color="secondary" iconStyle="width: 1000, height:1000" /> */}
       <p className="loadingText1">Loading...</p>
     </div>
   );

@@ -197,6 +197,10 @@ export default function TablePhones(props) {
     setPage(0);
   };
 
+  const onSelectAllClick = () => {
+    return 0;
+  }
+
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   return (
@@ -213,6 +217,8 @@ export default function TablePhones(props) {
               >
                 <EnhancedTableHead
                   classes={classes}
+                  numSelected={0}
+                  onSelectAllClick={onSelectAllClick}
                   order={order}
                   orderBy={orderBy}
                   onRequestSort={handleRequestSort}
